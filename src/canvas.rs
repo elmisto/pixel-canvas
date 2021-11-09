@@ -301,7 +301,7 @@ where
             }
             event => {
                 let changed = (self.event_handler)(&self.info, &mut self.state, &event);
-                should_render = changed || !self.info.render_on_change;
+                should_render = should_render || changed || !self.info.render_on_change;
             }
         })
     }
